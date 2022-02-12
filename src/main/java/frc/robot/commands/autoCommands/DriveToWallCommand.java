@@ -4,6 +4,7 @@
 
 package frc.robot.commands.autoCommands;
 
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.PIDCommand;
 import frc.robot.subsystems.Chassis;
@@ -27,7 +28,7 @@ public class DriveToWallCommand extends PIDCommand {
         () -> distance,
         // This uses the output
         output -> {
-          chassis.drive(0, -0.5 * chassis.clamp(output));
+          chassis.drive(0, -0.5 * MathUtil.clamp(output, -1.0, 1.0));
           System.out.println("Distance: " + sensors.getUltrasonicDistanceInches() + 
                              "Output" + -0.25 * output);
         });
