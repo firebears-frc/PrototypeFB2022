@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Chassis;
 
+
 public class DriveCommand extends CommandBase {
 
     Chassis m_chassis;
@@ -36,7 +37,7 @@ public class DriveCommand extends CommandBase {
     // Called every time the scheduler runs while the command is scheduled.
     @Override
     public void execute() {
-        m_chassis.drive(0.5 * m_xController.getLeftX(), 0.5 * m_xController.getRightY());
+        m_chassis.drive(m_xController.getLeftX(), m_xController.getRightY());
     }
 
     // Called once the command ends or is interrupted.

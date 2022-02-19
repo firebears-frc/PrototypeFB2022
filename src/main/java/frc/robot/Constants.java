@@ -28,5 +28,14 @@ public class Constants {
     *   public static final int kRightMotor2Port = 3; 
     * }
     */ 
+
+    public static final class ChassisConstants {
+        public static final double kP = 0.00025;
+        public static final double kI = 0.0;
+        public static final double kD = 0.00001;
+
+
+    }
+
 }
 
